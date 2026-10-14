@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Confessions</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+.card { width: 100%; max-width: 400px; }
+h1 { font-size: 30px; letter-spacing: 2px; }
+p { color: #888; line-height: 1.6; }
+textarea {
+  width: 100%; height: 160px;
+  background: #141414; color: white;
+  border: 1px solid #333; border-radius: 10px;
+  padding: 15px; font-size: 15px; resize: vertical;
+}
+button {
+  width: 100%; padding: 15px; margin-top: 15px;
+  background: white; color: black; border: none;
+  border-radius: 8px; font-weight: bold;
+}
+#msg { color: #aaa; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="card">
+<h1>SECRET CONFESSIONS</h1>
+<p>Your secrets. Your words. No names needed.</p>
+<form id="confession">
+<textarea id="message" maxlength="2000" required
+placeholder="Write your confession here..."></textarea>
+<button type="submit">SEND CONFESSION ↗</button>
+<p id="msg"></p>
+</form>
+</div>
+<script>
+document.getElementById('confession').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('msg').textContent =
+    'Thank you for sharing. Telegram connection is not set up yet.';
+});
+</script>
+</body>
+</html>
